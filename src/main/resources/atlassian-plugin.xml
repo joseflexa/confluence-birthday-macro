@@ -1,0 +1,24 @@
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+        <param name="plugin-icon">images/pluginIcon.png</param>
+        <param name="plugin-logo">images/pluginLogo.png</param>
+    </plugin-info>
+
+    <!-- add our i18n resource -->
+    <resource type="i18n" name="i18n" location="confluence-birthday-macro"/>
+    
+    <!-- add our web resources -->
+    <web-resource key="confluence-birthday-macro-resources" name="confluence-birthday-macro Web Resources">
+        <dependency>com.atlassian.auiplugin:ajs</dependency>
+        
+        <resource type="download" name="confluence-birthday-macro.css" location="/css/confluence-birthday-macro.css"/>
+        <resource type="download" name="confluence-birthday-macro.js" location="/js/confluence-birthday-macro.js"/>
+        <resource type="download" name="images/" location="/images"/>
+
+        <context>confluence-birthday-macro</context>
+    </web-resource>
+    
+</atlassian-plugin>
